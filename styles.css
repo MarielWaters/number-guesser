@@ -71,8 +71,10 @@ section {
   border-radius: 25px;
   color: #ffffff;
   display: inline-block;
+  font-weight: 700;
   height: 20px;
-  text-transform: capitalize;
+  padding-bottom: .1rem;
+  text-transform: uppercase;
   width: 100px;
 }
 
@@ -82,27 +84,23 @@ section {
 }
 
 #main__section--range {
-  height: 70px;
+  height: 7rem;
   position: relative;
 }
 
-#main__section--range {
-  height: 70px;
-/*  position: relative;*/
-}
-
 #main__section--current-guess {
-  height: 300px;
+  height: 30rem;
 }
 
 #main__section--latest-score {
-  height: 150px;
+  height: 15rem;
 }
 
 .section__form--min,
 .section__form--max {
-/*  top: 50%;
-  right: 50%;*/
+/*  position: absolute;
+  right:;
+    top:;*/
   width: 100px;
 }
 
