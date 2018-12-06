@@ -58,11 +58,13 @@ main {
 section {
   border: 2px solid #6e6e6e;
   display: flex;
-  margin: 5px;
+  margin: .5rem;
+  padding: .5rem 1rem;
 }
 
 .section__title {
   color: #404041;
+  font-size: 1.4rem;
   font-weight: 700;
   width: 100%;
 }
@@ -72,7 +74,7 @@ section {
   border-radius: 25px;
   color: #ffffff;
   font-weight: 700;
-  height: 2rem;
+  height: 2.5rem;
   padding-bottom: .1rem;
   text-transform: uppercase;
   width: 10rem;
@@ -89,12 +91,13 @@ section {
 }
 
 .button--update {
+  margin-left: 3.5rem;
   width: 8rem;
 }
 
 #main__section--range {
   flex-wrap: wrap;
-  height: 7rem;
+  height: 9rem;
 }
 
 #main__section--current-guess {
@@ -106,9 +109,15 @@ section {
   height: 15rem;
 }
 
+.section__form--label {
+  display: block;
+  font-size: 1.2rem;
+}
+
 .section__form--min,
 .section__form--max {
-  width: 100px;
+  height: 2.5rem;
+  width: 14rem;
 }
 
 .section__current-range {
@@ -119,4 +128,14 @@ section {
 .section__current-range--max {
   font-weight: 700;
   /*text-decoraton: underline; */
+}
+
+
+.min-range-container,
+.max-range-container {
+  display: inline-block;
+}
+
+.max-range-container {
+  margin-left: 1rem;
 }
