@@ -8,6 +8,7 @@
 
 html {
   font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+  text-transform: capitalize;
 }
 
 body {
@@ -41,9 +42,72 @@ body {
 
 .header__subtitle:before,
 .header__subtitle:after {
+  border-bottom: 1px solid;
   content: "";
   display: inline-block;
-  width: 8rem;
   vertical-align: middle;
-  border-bottom: 1px solid;
+  width: 8rem;
+}
+
+main {
+  background-color: #f7f7f7;
+  height: 100%;
+  width: 50%;
+}
+
+section {
+  border: 2px solid #6e6e6e;
+  display: flex;
+  margin: 5px;
+}
+
+.section__title {
+  color: #404041;
+  font-weight: 700;
+}
+
+.section__form--btn {
+  background-color: #6e6e6e;
+  border-radius: 25px;
+  color: #ffffff;
+  display: inline-block;
+  height: 20px;
+  text-transform: capitalize;
+  width: 100px;
+}
+
+.section__form--btn:focus,
+.section__form--btn:hover {
+  background-color: #dd1972;
+}
+
+#main__section--range {
+  height: 70px;
+  position: relative;
+}
+
+#main__section--range {
+  height: 70px;
+/*  position: relative;*/
+}
+
+#main__section--current-guess {
+  height: 300px;
+}
+
+#main__section--latest-score {
+  height: 150px;
+}
+
+.section__form--min,
+.section__form--max {
+/*  top: 50%;
+  right: 50%;*/
+  width: 100px;
+}
+
+.section__current-range--min,
+.section__current-range--max {
+  font-weight: 700;
+  text-decoraton: underline; 
 }
