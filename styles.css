@@ -64,13 +64,13 @@ section {
 .section__title {
   color: #404041;
   font-weight: 700;
+  width: 100%;
 }
 
 .section__form--btn {
   background-color: #6e6e6e;
   border-radius: 25px;
   color: #ffffff;
-  display: inline-block;
   font-weight: 700;
   height: 2rem;
   padding-bottom: .1rem;
@@ -83,16 +83,22 @@ section {
   background-color: #dd1972;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .button--update {
   width: 8rem;
 }
 
 #main__section--range {
+  flex-wrap: wrap;
   height: 7rem;
-  position: relative;
 }
 
 #main__section--current-guess {
+  display: block;
   height: 30rem;
 }
 
@@ -102,10 +108,11 @@ section {
 
 .section__form--min,
 .section__form--max {
-  position: absolute;
-  right: ;
-    top:;
   width: 100px;
+}
+
+.section__current-range {
+  width: 100%;
 }
 
 .section__current-range--min,
