@@ -13,12 +13,24 @@
     <main>
       <section id="main__section--range"class="section">
         <h3 class="section__title">set range</h3>
+
+
         <form class="section__form">
+
+          <div class="min-range-container">
           <label for="min-range" class="section__form--label">min range</label>
           <input type="number" name="min-range" id="section__form--min-js" class="section__form--min">
+          </div>
+
+          <div class="max-range-container">
           <label for="max-range" class="section__form--label">max range</label>
           <input type="number" name="max-range" id="section__form--max-js" class="section__form--max">
+          </div>
+
+
           <input type="button" value="update" name="btn" id="section__form--btn-js" class="section__form--btn button--update">
+
+
         </form>
       </section>
       <section id="main__section--current-guess"class="section">
@@ -34,13 +46,11 @@
           <input type="text" name="challenger-name" id="section__form--challenger2" class="section__form--challenger2">
           <label for="guess" class="section__form--label">guess</label>
           <input type="number" name="number-guess" id="section__form--guess2-js" class="section__form--guess2">
-
         <div class="button-container">
           <input type="button" value="submit guess" name="submit-button" id="section__form--submit-btn-js" class="section__form--btn">
           <input type="button" value="reset game" name="reset-button" id="section__form--reset-btn-js" class="section__form--btn">
           <input type="button" value="clear game" name="clear-button" id="section__form--clear-btn-js" class="section__form--btn">
         </div>
-
         </form>
        </section>
       <section id="main__section--latest-score" class="section">
