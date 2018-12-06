@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+  background-color: #404041;
+  height: 13rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header__title {
+  color: #DD1972;
+  font-size: 4.5rem;
+  letter-spacing: .5rem;
+  padding-top: 2.5rem;
+}
+
+.header__title--verb {
+  font-weight: 300;
+}
+
+.header__subtitle {
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: .2rem;
+}
+
+.header__subtitle:before,
+.header__subtitle:after {
+  content: "";
+  display: inline-block;
+  width: 8rem;
+  vertical-align: middle;
+  border-bottom: 1px solid;
+}
