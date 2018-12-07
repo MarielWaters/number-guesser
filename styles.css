@@ -101,7 +101,8 @@ section {
 }
 
 #main__section--current-guess {
-  display: block;
+  /*display: block;*/
+  flex-wrap: wrap;
   height: 30rem;
 }
 
@@ -140,4 +141,18 @@ section {
 
 .max-range-container {
   margin-left: 1rem;
+}
+
+.challenger-container {
+  display: inline-block;
+}
+
+.section__form--challenger-name {
+  height: 2.5rem;
+  width: 22rem;
+}
+
+.section__form--guess {
+  height: 2.5rem;
+  width: 14rem;
 }
