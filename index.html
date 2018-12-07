@@ -36,17 +36,25 @@
       </section>
       <section id="main__section--current-guess"class="section">
         <p class="section__current-range">the current range is <span class="section__current-range--min">1</span> to <span class="section__current-range--max">100</span></p>
-        <h3 class="section__title">challenger 1</h3>
-        <form class="section__form">
-          <label for="name" class="section__form--label">name</label>
-          <input type="text" name="challenger-name" id="section__form--challenger1" class="section__form--challenger1">
-          <label for="guess" class="section__form--label">guess</label>
-          <input type="number" name="number-guess" id="section__form--guess1-js" class="section__form--guess1">
+        <div class="main__section--challenger1-container">
+          <h3 class="section__title">challenger 1</h3>
+          <form class="section__form--challenger1">
+            <label for="name" class="section__form--label">name</label>
+            <input type="text" name="challenger-name" id="section__form--challenger1-js" class="section__form--challenger1-name">
+            <label for="guess" class="section__form--label">guess</label>
+            <input type="number" name="number-guess" id="section__form--guess1-js" class="section__form--guess1">
+          </form>
+        </div>
+        <div class="main__section--challenger2-container">
           <h3 class="section__title">challenger 2</h3>
-          <label for="name" class="section__form--label">name</label>
-          <input type="text" name="challenger-name" id="section__form--challenger2" class="section__form--challenger2">
-          <label for="guess" class="section__form--label">guess</label>
-          <input type="number" name="number-guess" id="section__form--guess2-js" class="section__form--guess2">
+          <form class="section__form--challenger2">
+            <label for="name" class="section__form--label">name</label>
+            <input type="text" name="challenger-name" id="section__form--challenger2-js" class="section__form--challenger2-name">
+            <label for="guess" class="section__form--label">guess</label>
+            <input type="number" name="number-guess" id="section__form--guess2-js" class="section__form--guess2">
+          </form>
+
+
         <div class="button-container">
           <input type="button" value="submit guess" name="submit-button" id="section__form--submit-btn-js" class="section__form--btn">
           <input type="button" value="reset game" name="reset-button" id="section__form--reset-btn-js" class="section__form--btn">
