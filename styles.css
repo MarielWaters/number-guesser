@@ -73,11 +73,12 @@ section {
   background-color: #6e6e6e;
   border-radius: 25px;
   color: #ffffff;
+  font-size: 1.6rem;
   font-weight: 700;
-  height: 2.5rem;
+  height: 3.1rem;
   padding-bottom: .1rem;
   text-transform: uppercase;
-  width: 10rem;
+  width: 16rem;
 }
 
 .section__form--btn:focus,
@@ -88,11 +89,12 @@ section {
 .button-container {
   display: flex;
   justify-content: space-around;
+  width: 100%
 }
 
 .button--update {
   margin-left: 3.5rem;
-  width: 8rem;
+  width: 11rem;
 }
 
 #main__section--range {
@@ -133,7 +135,6 @@ section {
   text-decoration: underline; 
 }
 
-
 .min-range-container,
 .max-range-container {
   display: inline-block;
@@ -141,10 +142,6 @@ section {
 
 .max-range-container {
   margin-left: 1rem;
-}
-
-.challenger-container {
-  display: inline-block;
 }
 
 .section__form--challenger-name {
@@ -155,4 +152,9 @@ section {
 .section__form--guess {
   height: 2.5rem;
   width: 14rem;
+}
+
+.main__section--challenger-name,
+.main__section--challenger-guess {
+  display: inline-block;
 }
