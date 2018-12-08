@@ -10,6 +10,7 @@ function randomNum(min, max) {
 }
 
 randomNum(1, 100);
+console.log(numToGuess)
 
 var updateButton = document.getElementById('section__form--btn-js');
 
