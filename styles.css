@@ -86,6 +86,11 @@ section {
   background-color: #dd1972;
 }
 
+#section__form--clear-btn-js:disabled,
+#section__form--reset-btn-js:disabled {
+  background-color: #d0d2d3;
+}
+
 .button-container {
   display: flex;
   justify-content: space-around;
