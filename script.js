@@ -1,5 +1,3 @@
-//add event listener to submit button, when submitted, we need to PULL value from input fields and pass those values through our function that we just made to generate a new number, that new range will have to be stored in a variable
-
 var numToGuess = 0;
 var minRange = document.getElementById('section__form--min-js');
 var maxRange = document.getElementById('section__form--max-js');
@@ -10,7 +8,7 @@ var challenger1 = document.getElementById('section__form--challenger1-js');
 var guess1 = document.getElementById('section__form--guess1-js');
 var challenger2 = document.getElementById('section__form--challenger2-js');
 var guess2 = document.getElementById('section__form--guess2-js');
-
+var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2]
 
 function randomNum(min, max) {
   numToGuess = Math.ceil(Math.random() * (max - min) + min);
@@ -30,6 +28,8 @@ clearBtn.addEventListener('click', function() {
   maxRange.value = "";
   guess1.value = "";
   guess2.value = "";
+  clearBtn.disabled = true;
+   resetBtn.disabled = true;
 })
 
 resetBtn.addEventListener('click', function() {
@@ -40,5 +40,24 @@ resetBtn.addEventListener('click', function() {
   challenger1.value = "";
   challenger2.value = "";
   randomNum(1, 100);
-  console.log(numToGuess)
+  resetBtn.disabled = true;
+  clearBtn.disabled = true;
+  console.log(numToGuess);
 })
+
+inputArray.forEach(function(input) {
+  input.addEventListener('keyup', enableBtn)
+})
+
+function enableBtn() {
+  console.log(inputArray)
+    if (guess1.value || guess2.value || challenger1.value || challenger2.value || minRange.value || maxRange.value) {
+      console.log('if')
+      clearBtn.disabled = false;
+      resetBtn.disabled = false;
+    } else {
+      console.log('else')
+      clearBtn.disabled = true;
+      resetBtn.disabled = true;
+    } 
+  }
