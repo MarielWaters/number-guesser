@@ -12,7 +12,9 @@ html {
 }
 
 body {
+  background-color: #efefef;
   box-sizing: border-box;
+  color: #404041;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -57,7 +59,8 @@ main {
 
 section {
   border: 2px solid #6e6e6e;
-  display: flex;
+  background-color: #fff;
+  /*display: flex;*/
   margin: .5rem;
   padding: .5rem 1rem;
 }
@@ -94,6 +97,7 @@ section {
 .button-container {
   display: flex;
   justify-content: space-around;
+  margin: 1rem;
   width: 100%
 }
 
@@ -163,3 +167,37 @@ section {
 .main__section--challenger-guess {
   display: inline-block;
 }
+
+.main__section--latest-score {
+  display: flex;
+  margin: 0 auto;
+}
+
+/*.latest-score-divider {
+  height: 4rem;
+  width: 1px;
+}*/
+
+.section__guess-feedback-container {
+  flex: 0 1 calc(50% - 1em);
+  text-align: center;
+}
+
+.section__guess-feedback-container--actual-guess {
+  color: #dd1972;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.section__guess--challenger-name {
+  font-weight: 700;
+}
+
+.section__guess-feedback-container--guess-feedback,
+.section__guess-feedback-container--current-guess {
+  text-transform: lowercase;
+}
+
+/*.winner-card__container {
+  background-color: #404041;
+}*/
