@@ -8,11 +8,10 @@ var challenger1 = document.getElementById('section__form--challenger1-js');
 var guess1 = document.getElementById('section__form--guess1-js');
 var challenger2 = document.getElementById('section__form--challenger2-js');
 var guess2 = document.getElementById('section__form--guess2-js');
-var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2]
+var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2];
 
 function randomNum(min, max) {
   numToGuess = Math.ceil(Math.random() * (max - min) + min);
-  // console.log(numToGuess);
 }
 
 randomNum(1, 100);
@@ -29,7 +28,7 @@ clearBtn.addEventListener('click', function() {
   guess1.value = "";
   guess2.value = "";
   clearBtn.disabled = true;
-   resetBtn.disabled = true;
+  resetBtn.disabled = true;
 })
 
 resetBtn.addEventListener('click', function() {
@@ -39,9 +38,9 @@ resetBtn.addEventListener('click', function() {
   guess2.value = "";
   challenger1.value = "";
   challenger2.value = "";
-  randomNum(1, 100);
   resetBtn.disabled = true;
   clearBtn.disabled = true;
+  randomNum(1, 100);
   console.log(numToGuess);
 })
 
@@ -50,13 +49,10 @@ inputArray.forEach(function(input) {
 })
 
 function enableBtn() {
-  console.log(inputArray)
     if (guess1.value || guess2.value || challenger1.value || challenger2.value || minRange.value || maxRange.value) {
-      console.log('if')
       clearBtn.disabled = false;
       resetBtn.disabled = false;
     } else {
-      console.log('else')
       clearBtn.disabled = true;
       resetBtn.disabled = true;
     } 
