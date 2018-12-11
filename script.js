@@ -12,41 +12,39 @@ var submitBtn = document.getElementById('section__form--submit-btn-js');
 var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2];
 
 submitBtn.addEventListener('click', submitGuess);
+clearBtn.addEventListener('click', clearField);
+updateBtn.addEventListener('click', newRange);
+resetBtn.addEventListener('click', resetField);
 
 function randomNum(min, max) {
   numToGuess = Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 randomNum(1, 100);
-console.log(numToGuess)
+console.log(numToGuess + " og number")
 
-updateBtn.addEventListener('click', function() {
-  randomNum(parseInt(minRange.value), parseInt(maxRange.value));
-  console.log(minRange.value, maxRange.value);
-  console.log(numToGuess);
-})
-
-clearBtn.addEventListener('click', function() {
-  minRange.value = "";
-  maxRange.value = "";
-  guess1.value = "";
-  guess2.value = "";
-  clearBtn.disabled = true;
-  resetBtn.disabled = true;
-})
-
-resetBtn.addEventListener('click', function() {
+function clearField() {
   minRange.value = "";
   maxRange.value = "";
   guess1.value = "";
   guess2.value = "";
   challenger1.value = "";
   challenger2.value = "";
-  resetBtn.disabled = true;
   clearBtn.disabled = true;
-  randomNum(1, 100);
+  resetBtn.disabled = true;
+}
+
+function newRange() {
+  randomNum(parseInt(minRange.value), parseInt(maxRange.value));
+  console.log(minRange.value, maxRange.value);
   console.log(numToGuess);
-})
+}
+
+function resetField() {
+  randomNum(parseInt(minRange.value), parseInt(maxRange.value));
+  console.log(numToGuess + " new random number");
+  clearField();
+}
 
 inputArray.forEach(function(input) {
   input.addEventListener('keyup', enableBtn)
