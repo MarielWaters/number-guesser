@@ -11,89 +11,91 @@
       <h1 class="header__title">Number<span class="header__title--verb">Guesser</span></h1>
       <h2 class="header__subtitle"> Ultimate Challenger Edition </h2>
     </header>
-    <main class="main">
-      <section id="main__section--range"class="section">
-        <h3 class="section__title">set range</h3>
-        <form class="section__form">
-          <div class="min-range-container">
-          <label for="min-range" class="section__form--label">min range</label>
-          <input type="number" name="min-range" id="section__form--min-js" class="section__form--min">
-          <p id="min-range-error-message-js" class="error-message">Min is greater than max!</p>
-          </div>
-          <div class="max-range-container">
-          <label for="max-range" class="section__form--label">max range</label>
-          <input type="number" name="max-range" id="section__form--max-js" class="section__form--max">
-          <p id="max-range-error-message-js" class="error-message">Max is less than min!</p>
-          </div>
-          <input type="button" value="update" name="btn" id="section__form--btn-js" class="section__form--btn button--update">
-        </form>
-      </section>
-      <section id="main__section--current-guess"class="section">
-        <p class="section__current-range">the current range is <span class="section__current-range--min">1</span> to <span class="section__current-range--max">100</span></p>
-        <h3 class="section__title">challenger 1</h3>
-        <form class="section__form--challenger1">
-          <div class="main__section--challenger-name">
-            <label for="name" class="section__form--label">name</label>
-            <input type="text" name="challenger-name" id="section__form--challenger1-js" class="section__form--challenger-name">
-          </div>
-          <div class="main__section--challenger-guess">
-            <label for="guess" class="section__form--label">guess</label>
-            <input type="number" name="number-guess" id="section__form--guess1-js" class="section__form--guess">
-            <p id="challenger1-guess-error-message-js" class="error-message">Guess is outside number range!</p>
-          </div>
-        </form>
-        <h3 class="section__title">challenger 2</h3>
-          <form class="section__form--challenger2">
+
+    <div class="game-container">
+      <main class="main">
+        <section id="main__section--range"class="section">
+          <h3 class="section__title">set range</h3>
+          <form class="section__form">
+            <div class="min-range-container">
+            <label for="min-range" class="section__form--label">min range</label>
+            <input type="number" name="min-range" id="section__form--min-js" class="section__form--min">
+            <p id="min-range-error-message-js" class="error-message">Min is greater than max!</p>
+            </div>
+            <div class="max-range-container">
+            <label for="max-range" class="section__form--label">max range</label>
+            <input type="number" name="max-range" id="section__form--max-js" class="section__form--max">
+            <p id="max-range-error-message-js" class="error-message">Max is less than min!</p>
+            </div>
+            <input type="button" value="update" name="btn" id="section__form--btn-js" class="section__form--btn button--update">
+          </form>
+        </section>
+        <section id="main__section--current-guess"class="section">
+          <p class="section__current-range">the current range is <span class="section__current-range--min">1</span> to <span class="section__current-range--max">100</span></p>
+          <h3 class="section__title">challenger 1</h3>
+          <form class="section__form--challenger1">
             <div class="main__section--challenger-name">
               <label for="name" class="section__form--label">name</label>
-              <input type="text" name="challenger-name" id="section__form--challenger2-js" class="section__form--challenger-name">
+              <input type="text" name="challenger-name" id="section__form--challenger1-js" class="section__form--challenger-name">
             </div>
             <div class="main__section--challenger-guess">
               <label for="guess" class="section__form--label">guess</label>
-              <input type="number" name="number-guess" id="section__form--guess2-js" class="section__form--guess">
-              <p id="challenger2-guess-error-message-js" class="error-message">Guess is outside number range!</p>
+              <input type="number" name="number-guess" id="section__form--guess1-js" class="section__form--guess">
+              <p id="challenger1-guess-error-message-js" class="error-message">Guess is outside number range!</p>
             </div>
-        </form>
-        <div class="button-container">
-          <input type="button" value="submit guess" name="submit-button" id="section__form--submit-btn-js" class="section__form--btn">
-          <input type="button" value="reset game" name="reset-button" id="section__form--reset-btn-js" class="section__form--btn" disabled="true">
-          <input type="button" value="clear game" name="clear-button" id="section__form--clear-btn-js" class="section__form--btn" disabled="true">
-        </div>
-       </section>
-      <section class="section" id="section__latest-score-container-js">
-        <h3 class="section__title">Latest score</h3>
-        <div class="main__section--latest-score">
-          <div class="section__guess-feedback-container">
-            <p id="append-challenger1-name-js" class="section__guess--challenger-name">challenger 1 name</p>
-            <p class="section__guess-feedback-container--current-guess">Current guess</p>
-            <p id="section__guess-feedback-container--actual-guess1-js" class="section__guess-feedback-container--actual-guess"></p>
-            <p id="section__guess-feedback-container--accuracy1-js" class="section__guess-feedback-container--guess-feedback">too damn high</p>
+          </form>
+          <h3 class="section__title">challenger 2</h3>
+            <form class="section__form--challenger2">
+              <div class="main__section--challenger-name">
+                <label for="name" class="section__form--label">name</label>
+                <input type="text" name="challenger-name" id="section__form--challenger2-js" class="section__form--challenger-name">
+              </div>
+              <div class="main__section--challenger-guess">
+                <label for="guess" class="section__form--label">guess</label>
+                <input type="number" name="number-guess" id="section__form--guess2-js" class="section__form--guess">
+                <p id="challenger2-guess-error-message-js" class="error-message">Guess is outside number range!</p>
+              </div>
+          </form>
+          <div class="button-container">
+            <input type="button" value="submit guess" name="submit-button" id="section__form--submit-btn-js" class="section__form--btn">
+            <input type="button" value="reset game" name="reset-button" id="section__form--reset-btn-js" class="section__form--btn" disabled="true">
+            <input type="button" value="clear game" name="clear-button" id="section__form--clear-btn-js" class="section__form--btn" disabled="true">
           </div>
-          <hr class="latest-score-divider">
-          <div class="section__guess-feedback-container">
-            <p id="append-challenger2-name-js" class="section__guess--challenger-name">challenger 2 name</p>
-            <p class="section__guess-feedback-container--current-guess">Current guess</p>
-            <p id="section__guess-feedback-container--actual-guess2-js" class="section__guess-feedback-container--actual-guess"></p>
-            <p id="section__guess-feedback-container--accuracy2-js" class="section__guess-feedback-container--guess-feedback">too damn low</p>
+         </section>
+        <section class="section" id="section__latest-score-container-js">
+          <h3 class="section__title">Latest score</h3>
+          <div class="main__section--latest-score">
+            <div class="section__guess-feedback-container">
+              <p id="append-challenger1-name-js" class="section__guess--challenger-name">challenger 1 name</p>
+              <p class="section__guess-feedback-container--current-guess">Current guess</p>
+              <p id="section__guess-feedback-container--actual-guess1-js" class="section__guess-feedback-container--actual-guess"></p>
+              <p id="section__guess-feedback-container--accuracy1-js" class="section__guess-feedback-container--guess-feedback">too damn high</p>
+            </div>
+            <hr class="latest-score-divider">
+            <div class="section__guess-feedback-container">
+              <p id="append-challenger2-name-js" class="section__guess--challenger-name">challenger 2 name</p>
+              <p class="section__guess-feedback-container--current-guess">Current guess</p>
+              <p id="section__guess-feedback-container--actual-guess2-js" class="section__guess-feedback-container--actual-guess"></p>
+              <p id="section__guess-feedback-container--accuracy2-js" class="section__guess-feedback-container--guess-feedback">too damn low</p>
+          </div>
         </div>
-      </div>
+        </section>
+      </main>
+
+
+
+
+
+      <section class="winner-card__container">
+        <aside class="winner-card">
+          <p>CHALLENGER 1 NAME</p>
+          <p>CHALLENGER 2 NAME</p>
+          <p>WINNER NAME</p>
+          <p>winner</p>
+          <img src="./assets/cancel.png" alt="delete winner card">
+        </aside>
       </section>
-    </main>
-
-
-
-
-
-    <section class="winner-card__container">
-      <aside>
-        <p>CHALLENGER 1 NAME</p>
-        <p>CHALLENGER 2 NAME</p>
-        <p>WINNER NAME</p>
-        <p>winner</p>
-        <img src="./assets/cancel.png" alt="delete winner card">
-      </aside>
-    </section>
-
+    </div>
 
   </body>
 </html>
