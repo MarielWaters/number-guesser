@@ -51,6 +51,10 @@ body {
   width: 8rem;
 }
 
+.game-container {
+  display: flex;
+}
+
 .main {
   background-color: #f7f7f7;
   height: 100%;
@@ -225,5 +229,13 @@ form {
 }
 
 .winner-card__container {
-  /* background-color: #404041; */
+  background-color: ;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.winner-card {
+  flex-basis: 90%;
+  border: 2px solid pink;
 }
