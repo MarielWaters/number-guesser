@@ -51,24 +51,37 @@ body {
   width: 8rem;
 }
 
-main {
+.main {
   background-color: #f7f7f7;
   height: 100%;
   width: 50%;
 }
 
-section {
+.section {
   border: 2px solid #6e6e6e;
   background-color: #fff;
-  /*display: flex;*/
+  display: flex;
+  flex-wrap: wrap;
   margin: .5rem;
   padding: .5rem 1rem;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .section__title {
   color: #404041;
   font-size: 1.4rem;
   font-weight: 700;
+  width: 100%;
+}
+
+.section__form {
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -79,9 +92,8 @@ section {
   font-size: 1.6rem;
   font-weight: 700;
   height: 3.1rem;
-  padding-bottom: .1rem;
   text-transform: uppercase;
-  width: 16rem;
+  width: 30%;
 }
 
 .section__form--btn:focus,
@@ -96,29 +108,22 @@ section {
 
 .button-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  margin: 1rem;
   width: 100%
 }
 
 .button--update {
-  margin-left: 3.5rem;
-  width: 11rem;
+  width: 25%;
 }
 
 #main__section--range {
   flex-wrap: wrap;
-  height: 9rem;
 }
 
 #main__section--current-guess {
-  /*display: block;*/
   flex-wrap: wrap;
   height: 30rem;
-}
-
-#main__section--latest-score {
-  height: 15rem;
 }
 
 .section__form--label {
@@ -129,7 +134,7 @@ section {
 .section__form--min,
 .section__form--max {
   height: 2.5rem;
-  width: 14rem;
+  width: 100%;
 }
 
 .section__current-range {
@@ -147,6 +152,7 @@ section {
 .min-range-container,
 .max-range-container {
   display: inline-block;
+  flex-basis: 33%;
 }
 
 .max-range-container {
@@ -155,17 +161,18 @@ section {
 
 .section__form--challenger-name {
   height: 2.5rem;
-  width: 22rem;
+  width: 100%;
 }
 
 .section__form--guess {
   height: 2.5rem;
-  width: 14rem;
+  width: 100%;
 }
 
 .error-message {
   color: #DD1972;
   text-transform: none;
+  visibility: hidden;
 }
 
 .error-message::before {
@@ -178,23 +185,27 @@ section {
   width: 1rem;
 }
 
-.main__section--challenger-name,
+.main__section--challenger-name {
+  flex-basis: 63%;
+}
+
 .main__section--challenger-guess {
-  display: inline-block;
+  flex-basis: 30%
 }
 
 .main__section--latest-score {
   display: flex;
   margin: 0 auto;
+  min-height: 10rem;
+  width: 100%;
 }
 
-/*.latest-score-divider {
-  height: 4rem;
-  width: 1px;
-}*/
+#section__latest-score-container-js {
+  display: none;
+}
 
 .section__guess-feedback-container {
-  flex: 0 1 calc(50% - 1em);
+  flex-basis: 50%;
   text-align: center;
 }
 
@@ -213,6 +224,6 @@ section {
   text-transform: lowercase;
 }
 
-/*.winner-card__container {
-  background-color: #404041;
-}*/
+.winner-card__container {
+  /* background-color: #404041; */
+}

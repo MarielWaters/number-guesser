@@ -57,12 +57,12 @@ function enableBtn() {
     } else {
       clearBtn.disabled = true;
       resetBtn.disabled = true;
-    } 
+    }
   }
 
 function submitGuess() {
   var latestScoreContainer = document.getElementById('section__latest-score-container-js');
-  latestScoreContainer.hidden = false;
+  latestScoreContainer.style.display = 'flex';
   var challenger1Name = document.getElementById('append-challenger1-name-js');
   challenger1Name.innerText = challenger1.value;
   var challenger2Name = document.getElementById('append-challenger2-name-js');
