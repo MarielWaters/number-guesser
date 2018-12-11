@@ -11,7 +11,7 @@
       <h1 class="header__title">Number<span class="header__title--verb">Guesser</span></h1>
       <h2 class="header__subtitle"> Ultimate Challenger Edition </h2>
     </header>
-    <main>
+    <main class="main">
       <section id="main__section--range"class="section">
         <h3 class="section__title">set range</h3>
         <form class="section__form">
@@ -20,8 +20,6 @@
           <input type="number" name="min-range" id="section__form--min-js" class="section__form--min">
           <p id="min-range-error-message-js" class="error-message">Min is greater than max!</p>
           </div>
-
-
           <div class="max-range-container">
           <label for="max-range" class="section__form--label">max range</label>
           <input type="number" name="max-range" id="section__form--max-js" class="section__form--max">
@@ -30,8 +28,6 @@
           <input type="button" value="update" name="btn" id="section__form--btn-js" class="section__form--btn button--update">
         </form>
       </section>
-
-
       <section id="main__section--current-guess"class="section">
         <p class="section__current-range">the current range is <span class="section__current-range--min">1</span> to <span class="section__current-range--max">100</span></p>
         <h3 class="section__title">challenger 1</h3>
@@ -57,16 +53,14 @@
               <input type="number" name="number-guess" id="section__form--guess2-js" class="section__form--guess">
               <p id="challenger2-guess-error-message-js" class="error-message">Guess is outside number range!</p>
             </div>
-
-
+        </form>
         <div class="button-container">
           <input type="button" value="submit guess" name="submit-button" id="section__form--submit-btn-js" class="section__form--btn">
           <input type="button" value="reset game" name="reset-button" id="section__form--reset-btn-js" class="section__form--btn" disabled="true">
           <input type="button" value="clear game" name="clear-button" id="section__form--clear-btn-js" class="section__form--btn" disabled="true">
         </div>
-        </form>
        </section>
-      <section class="section" id="section__latest-score-container-js" hidden="true">
+      <section class="section" id="section__latest-score-container-js">
         <h3 class="section__title">Latest score</h3>
         <div class="main__section--latest-score">
           <div class="section__guess-feedback-container">
@@ -85,15 +79,21 @@
       </div>
       </section>
     </main>
+
+
+
+
+
     <section class="winner-card__container">
       <aside>
         <p>CHALLENGER 1 NAME</p>
         <p>CHALLENGER 2 NAME</p>
         <p>WINNER NAME</p>
         <p>winner</p>
-        <img src="assets/cancel.png" alt="delete winner card">
+        <img src="./assets/cancel.png" alt="delete winner card">
       </aside>
     </section>
+
+
   </body>
-  <!-- <script type="text/javascript" src="script.js"></script> -->
 </html>
