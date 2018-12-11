@@ -8,17 +8,21 @@ var challenger1 = document.getElementById('section__form--challenger1-js');
 var guess1 = document.getElementById('section__form--guess1-js');
 var challenger2 = document.getElementById('section__form--challenger2-js');
 var guess2 = document.getElementById('section__form--guess2-js');
+var submitBtn = document.getElementById('section__form--submit-btn-js');
 var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2];
 
+submitBtn.addEventListener('click', submitGuess);
+
 function randomNum(min, max) {
-  numToGuess = Math.ceil(Math.random() * (max - min) + min);
+  numToGuess = Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 randomNum(1, 100);
 console.log(numToGuess)
 
 updateBtn.addEventListener('click', function() {
-  randomNum(minRange.value, maxRange.value);
+  randomNum(parseInt(minRange.value), parseInt(maxRange.value));
+  console.log(minRange.value, maxRange.value);
   console.log(numToGuess);
 })
 
@@ -57,3 +61,17 @@ function enableBtn() {
       resetBtn.disabled = true;
     } 
   }
+
+function submitGuess() {
+  var latestScoreContainer = document.getElementById('section__latest-score-container-js');
+  latestScoreContainer.hidden = false;
+  var challenger1Name = document.getElementById('append-challenger1-name-js');
+  challenger1Name.innerText = challenger1.value;
+  var challenger2Name = document.getElementById('append-challenger2-name-js');
+  challenger2Name.innerText = challenger2.value;
+  var challenger1Guess = document.getElementById('section__guess-feedback-container--actual-guess1-js');
+  challenger1Guess.innerText = guess1.value;
+  var challenger2Guess = document.getElementById('section__guess-feedback-container--actual-guess2-js');
+  challenger2Guess.innerText = guess2.value;
+//reuse logic from previous functions to clear fields
+}
