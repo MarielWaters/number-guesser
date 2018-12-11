@@ -71,5 +71,5 @@ function submitGuess() {
   challenger1Guess.innerText = guess1.value;
   var challenger2Guess = document.getElementById('section__guess-feedback-container--actual-guess2-js');
   challenger2Guess.innerText = guess2.value;
-//reuse logic from previous functions to clear fields
+  clearField();
 }
