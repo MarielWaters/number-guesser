@@ -141,7 +141,7 @@ section {
 .section__current-range--min,
 .section__current-range--max {
   font-weight: 700;
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 .min-range-container,
@@ -161,6 +161,21 @@ section {
 .section__form--guess {
   height: 2.5rem;
   width: 14rem;
+}
+
+.error-message {
+  color: #DD1972;
+  text-transform: none;
+}
+
+.error-message::before {
+  background-image: url(./assets/warning-icon.png);
+  background-size: 1rem;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  margin-right: .5rem;
+  width: 1rem;
 }
 
 .main__section--challenger-name,

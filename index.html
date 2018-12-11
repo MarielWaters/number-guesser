@@ -14,26 +14,24 @@
     <main>
       <section id="main__section--range"class="section">
         <h3 class="section__title">set range</h3>
-
-
         <form class="section__form">
-
           <div class="min-range-container">
           <label for="min-range" class="section__form--label">min range</label>
           <input type="number" name="min-range" id="section__form--min-js" class="section__form--min">
+          <p id="min-range-error-message-js" class="error-message">Min is greater than max!</p>
           </div>
+
 
           <div class="max-range-container">
           <label for="max-range" class="section__form--label">max range</label>
           <input type="number" name="max-range" id="section__form--max-js" class="section__form--max">
+          <p id="max-range-error-message-js" class="error-message">Max is less than min!</p>
           </div>
-
-
           <input type="button" value="update" name="btn" id="section__form--btn-js" class="section__form--btn button--update">
-
-
         </form>
       </section>
+
+
       <section id="main__section--current-guess"class="section">
         <p class="section__current-range">the current range is <span class="section__current-range--min">1</span> to <span class="section__current-range--max">100</span></p>
         <h3 class="section__title">challenger 1</h3>
@@ -45,6 +43,7 @@
           <div class="main__section--challenger-guess">
             <label for="guess" class="section__form--label">guess</label>
             <input type="number" name="number-guess" id="section__form--guess1-js" class="section__form--guess">
+            <p id="challenger1-guess-error-message-js" class="error-message">Guess is outside number range!</p>
           </div>
         </form>
         <h3 class="section__title">challenger 2</h3>
@@ -56,7 +55,10 @@
             <div class="main__section--challenger-guess">
               <label for="guess" class="section__form--label">guess</label>
               <input type="number" name="number-guess" id="section__form--guess2-js" class="section__form--guess">
+              <p id="challenger2-guess-error-message-js" class="error-message">Guess is outside number range!</p>
             </div>
+
+
         <div class="button-container">
           <input type="button" value="submit guess" name="submit-button" id="section__form--submit-btn-js" class="section__form--btn">
           <input type="button" value="reset game" name="reset-button" id="section__form--reset-btn-js" class="section__form--btn" disabled="true">
