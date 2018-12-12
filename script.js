@@ -43,7 +43,32 @@ function newRange() {
   var currentRangeMax = document.getElementById('section__current-range--max-js');
   currentRangeMin.innerText = minRange.value;
   currentRangeMax.innerText = maxRange.value;
+  rangeErrorMsg();
 }
+
+function rangeErrorMsg() {
+  var minRangeErr = document.getElementById('min-range-error-message-js');
+  var maxRangeErr = document.getElementById('max-range-error-message-js');
+  var min = parseInt(minRange.value);
+  var max = parseInt(maxRange.value);
+  if (min >= max) {
+    minRangeErr.style.visibility = 'visible';
+    maxRangeErr.style.visibility = 'visible';
+  }
+}
+
+
+
+
+
+
+
+
+
+// function guessErrorMsg
+
+
+
 
 function resetField() {
   // randomNum(parseInt(minRange.value), parseInt(maxRange.value));
