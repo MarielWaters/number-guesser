@@ -147,8 +147,7 @@ form {
   width: 100%;
 }
 
-.section__current-range--min,
-.section__current-range--max {
+.section__current-range--num {
   font-weight: 700;
   text-decoration: underline;
 }

@@ -31,19 +31,27 @@ function clearField() {
   challenger1.value = "";
   challenger2.value = "";
   clearBtn.disabled = true;
-  resetBtn.disabled = true;
+  // resetBtn.disabled = true;
+  console.log('Boom!');
 }
 
 function newRange() {
   randomNum(parseInt(minRange.value), parseInt(maxRange.value));
   console.log(minRange.value, maxRange.value);
   console.log(numToGuess);
+  var currentRangeMin = document.getElementById('section__current-range--min-js');
+  var currentRangeMax = document.getElementById('section__current-range--max-js');
+  currentRangeMin.innerText = minRange.value;
+  currentRangeMax.innerText = maxRange.value;
 }
 
 function resetField() {
-  randomNum(parseInt(minRange.value), parseInt(maxRange.value));
+  // randomNum(parseInt(minRange.value), parseInt(maxRange.value));
+  randomNum(1, 100);
   console.log(numToGuess + " new random number");
-  clearField();
+  console.log('Boom!2');
+  resetBtn.disabled = true
+  // clearField();
 }
 
 inputArray.forEach(function(input) {
