@@ -8,8 +8,10 @@ var resetBtn = document.getElementById('section__form--reset-btn-js');
 var clearBtn = document.getElementById('section__form--clear-btn-js');
 var challenger1 = document.getElementById('section__form--challenger1-js');
 var guess1 = document.getElementById('section__form--guess1-js');
+var guessErr1 = document.getElementById('challenger1-guess-error-message-js')
 var challenger2 = document.getElementById('section__form--challenger2-js');
 var guess2 = document.getElementById('section__form--guess2-js');
+var guessErr2 = document.getElementById('challenger2-guess-error-message-js')
 var submitBtn = document.getElementById('section__form--submit-btn-js');
 var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2];
 
@@ -106,10 +108,12 @@ function submitGuess() {
   latestScoreContainer.style.display = 'flex';
   challenger1Name.innerText = challenger1.value;
   challenger2Name.innerText = challenger2.value;
-  challenger1Guess.innerText = guess1.value;
-  challenger2Guess.innerText = guess2.value;
-  
+  var currentGuess1 = guess1.value;
+  var currentGuess2 = guess2.value;
+  challenger1Guess.innerText = currentGuess1;
+  challenger2Guess.innerText = currentGuess2;
   guessEval();
+  errDisplay(currentGuess1, currentGuess2);
   clearField();
 }
 
@@ -117,8 +121,8 @@ function submitGuess() {
 function guessEval() {
   var guess1Feedback = document.getElementById('section__guess-feedback-container--accuracy1-js');
   var guess2Feedback = document.getElementById('section__guess-feedback-container--accuracy2-js');
-  one = parseInt(guess1.value);
-  two = parseInt(guess2.value);
+  var one = parseInt(guess1.value);
+  var two = parseInt(guess2.value);
 
   if (one > numToGuess) {
     guess1Feedback.innerText = "That's too high!";
@@ -137,9 +141,18 @@ function guessEval() {
   }
 }
 
-
-
-
+function errDisplay(one, two) {
+  var currentRangeMin = document.getElementById('section__current-range--min-js');
+  var currentRangeMax = document.getElementById('section__current-range--max-js');
+  console.log(currentRangeMax.innerText, currentRangeMin.innerText, one, two)
+  if (one > parseInt(currentRangeMax.innerText) || one < parseInt(currentRangeMin.innerText)) {
+    guessErr1.style.visibility = 'visible';
+    console.log(one, maxRange, 'one')
+  } else if (two > parseInt(currentRangeMax.innerText) || two < parseInt(currentRangeMin.innerText)) {
+    guessErr2.style.visibility = 'visible';
+    console.log(two, maxRange, 'two')
+  } 
+}
 
 
 
