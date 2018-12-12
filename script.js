@@ -108,5 +108,67 @@ function submitGuess() {
   challenger2Name.innerText = challenger2.value;
   challenger1Guess.innerText = guess1.value;
   challenger2Guess.innerText = guess2.value;
+  
+  guessEval();
   clearField();
 }
+
+
+function guessEval() {
+  var guess1Feedback = document.getElementById('section__guess-feedback-container--accuracy1-js');
+  var guess2Feedback = document.getElementById('section__guess-feedback-container--accuracy2-js');
+  one = parseInt(guess1.value);
+  two = parseInt(guess2.value);
+
+  if (one > numToGuess) {
+    guess1Feedback.innerText = "That's too high!";
+    console.log("Input number to high")
+  } else if (one < numToGuess) {
+    guess1Feedback.innerText = "That's too low!";
+    console.log("Input number to low")
+  } else {
+    guess1Feedback.innerText = "BOOM!";
+  }  if (two > numToGuess) {
+    guess2Feedback.innerText = "That's too high!"
+  } else if (two < numToGuess) {
+    guess2Feedback.innerText = "That's too low!"
+  } else {
+      guess2Feedback.innerText = "BOOM!"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
