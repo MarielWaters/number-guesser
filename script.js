@@ -1,6 +1,8 @@
 var numToGuess = 0;
 var minRange = document.getElementById('section__form--min-js');
 var maxRange = document.getElementById('section__form--max-js');
+var minRangeErr = document.getElementById('min-range-error-message-js');
+var maxRangeErr = document.getElementById('max-range-error-message-js');
 var updateBtn = document.getElementById('section__form--btn-js');
 var resetBtn = document.getElementById('section__form--reset-btn-js');
 var clearBtn = document.getElementById('section__form--clear-btn-js');
@@ -24,6 +26,7 @@ randomNum(1, 100);
 console.log(numToGuess + " og number")
 
 function clearField() {
+  // rangeErrorMsg();
   minRange.value = "";
   maxRange.value = "";
   guess1.value = "";
@@ -31,7 +34,7 @@ function clearField() {
   challenger1.value = "";
   challenger2.value = "";
   clearBtn.disabled = true;
-  // resetBtn.disabled = true;
+  clearErr();
   console.log('Boom!');
 }
 
@@ -47,20 +50,22 @@ function newRange() {
 }
 
 function rangeErrorMsg() {
-  var minRangeErr = document.getElementById('min-range-error-message-js');
-  var maxRangeErr = document.getElementById('max-range-error-message-js');
   var min = parseInt(minRange.value);
   var max = parseInt(maxRange.value);
   if (min >= max) {
     minRangeErr.style.visibility = 'visible';
     maxRangeErr.style.visibility = 'visible';
   }
+  if (min < max) {
+    minRangeErr.style.visibility = 'hidden';
+    maxRangeErr.style.visibility = 'hidden';
+  }
 }
 
-
-
-
-
+function clearErr() {
+  minRangeErr.style.visibility = 'hidden';
+  maxRangeErr.style.visibility = 'hidden';
+}
 
 
 
@@ -68,14 +73,13 @@ function rangeErrorMsg() {
 // function guessErrorMsg
 
 
-
-
 function resetField() {
   // randomNum(parseInt(minRange.value), parseInt(maxRange.value));
   randomNum(1, 100);
   console.log(numToGuess + " new random number");
   console.log('Boom!2');
-  resetBtn.disabled = true
+  resetBtn.disabled = true;
+  clearErr();
   // clearField();
 }
 
@@ -95,14 +99,14 @@ function enableBtn() {
 
 function submitGuess() {
   var latestScoreContainer = document.getElementById('section__latest-score-container-js');
-  latestScoreContainer.style.display = 'flex';
   var challenger1Name = document.getElementById('append-challenger1-name-js');
-  challenger1Name.innerText = challenger1.value;
   var challenger2Name = document.getElementById('append-challenger2-name-js');
-  challenger2Name.innerText = challenger2.value;
   var challenger1Guess = document.getElementById('section__guess-feedback-container--actual-guess1-js');
-  challenger1Guess.innerText = guess1.value;
   var challenger2Guess = document.getElementById('section__guess-feedback-container--actual-guess2-js');
+  latestScoreContainer.style.display = 'flex';
+  challenger1Name.innerText = challenger1.value;
+  challenger2Name.innerText = challenger2.value;
+  challenger1Guess.innerText = guess1.value;
   challenger2Guess.innerText = guess2.value;
   clearField();
 }
