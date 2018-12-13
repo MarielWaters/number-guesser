@@ -1,20 +1,30 @@
+//Random number generated on page load
 var numToGuess = 0;
+
+//Range Queries
 var minRange = document.getElementById('section__form--min-js');
 var maxRange = document.getElementById('section__form--max-js');
 var minRangeErr = document.getElementById('min-range-error-message-js');
 var maxRangeErr = document.getElementById('max-range-error-message-js');
+
+//Button Queries
 var updateBtn = document.getElementById('section__form--btn-js');
 var resetBtn = document.getElementById('section__form--reset-btn-js');
 var clearBtn = document.getElementById('section__form--clear-btn-js');
+var submitBtn = document.getElementById('section__form--submit-btn-js');
+
+//Challenger Queries
 var challenger1 = document.getElementById('section__form--challenger1-js');
 var guess1 = document.getElementById('section__form--guess1-js');
 var guessErr1 = document.getElementById('challenger1-guess-error-message-js')
 var challenger2 = document.getElementById('section__form--challenger2-js');
 var guess2 = document.getElementById('section__form--guess2-js');
 var guessErr2 = document.getElementById('challenger2-guess-error-message-js')
-var submitBtn = document.getElementById('section__form--submit-btn-js');
+
+//Array Query
 var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2];
 
+//Event Listeners
 submitBtn.addEventListener('click', submitGuess);
 clearBtn.addEventListener('click', clearField);
 updateBtn.addEventListener('click', newRange);
@@ -28,7 +38,6 @@ randomNum(1, 100);
 console.log(numToGuess + " og number")
 
 function clearField() {
-  // rangeErrorMsg();
   minRange.value = "";
   maxRange.value = "";
   guess1.value = "";
@@ -37,12 +46,10 @@ function clearField() {
   challenger2.value = "";
   clearBtn.disabled = true;
   clearErr();
-  console.log('Boom!');
 }
 
 function newRange() {
   randomNum(parseInt(minRange.value), parseInt(maxRange.value));
-  console.log(minRange.value, maxRange.value);
   console.log(numToGuess);
   var currentRangeMin = document.getElementById('section__current-range--min-js');
   var currentRangeMax = document.getElementById('section__current-range--max-js');
@@ -69,20 +76,12 @@ function clearErr() {
   maxRangeErr.style.visibility = 'hidden';
 }
 
-
-
-
-// function guessErrorMsg
-
-
 function resetField() {
-  // randomNum(parseInt(minRange.value), parseInt(maxRange.value));
   randomNum(1, 100);
   console.log(numToGuess + " new random number");
   console.log('Boom!2');
   resetBtn.disabled = true;
   clearErr();
-  // clearField();
 }
 
 inputArray.forEach(function(input) {
@@ -90,14 +89,14 @@ inputArray.forEach(function(input) {
 })
 
 function enableBtn() {
-    if (guess1.value || guess2.value || challenger1.value || challenger2.value || minRange.value || maxRange.value) {
-      clearBtn.disabled = false;
-      resetBtn.disabled = false;
-    } else {
-      clearBtn.disabled = true;
-      resetBtn.disabled = true;
-    }
+  if (guess1.value || guess2.value || challenger1.value || challenger2.value || minRange.value || maxRange.value) {
+    clearBtn.disabled = false;
+    resetBtn.disabled = false;
+  } else {
+    clearBtn.disabled = true;
+    resetBtn.disabled = true;
   }
+}
 
 function submitGuess() {
   var latestScoreContainer = document.getElementById('section__latest-score-container-js');
@@ -117,7 +116,6 @@ function submitGuess() {
   clearField();
 }
 
-
 function guessEval() {
   var guess1Feedback = document.getElementById('section__guess-feedback-container--accuracy1-js');
   var guess2Feedback = document.getElementById('section__guess-feedback-container--accuracy2-js');
@@ -125,18 +123,20 @@ function guessEval() {
   var two = parseInt(guess2.value);
   if (one > numToGuess) {
     guess1Feedback.innerText = "That's too high!";
-    console.log("Input number to high")
+    console.log("Input number too high")
   } else if (one < numToGuess) {
     guess1Feedback.innerText = "That's too low!";
-    console.log("Input number to low")
+    console.log("Input number too low")
   } else {
     guess1Feedback.innerText = "BOOM!";
+    cardDisplay();
   }  if (two > numToGuess) {
     guess2Feedback.innerText = "That's too high!"
-  } else if (two < numToGuess) {
+  }  else if (two < numToGuess) {
     guess2Feedback.innerText = "That's too low!"
-  } else {
-      guess2Feedback.innerText = "BOOM!"
+  }  else {
+    guess2Feedback.innerText = "BOOM!"
+    cardDisplay();
   }
 }
 
@@ -151,4 +151,19 @@ function errDisplay(one, two) {
     guessErr2.style.visibility = 'visible';
     console.log(two, maxRange, 'two')
   }
+}
+
+function cardDisplay() {
+  var cardContainer = document.querySelector('.winner-card__container');
+  cardContainer.classList.add('new-card');
+  var card = 
+   `<aside class="winner-card">
+      <p class="card-name"><span class="card-challenger">${challenger1.value}</span> vs <span class="card-challenger">${challenger2.value}</span></p>
+      <hr class="card-line">
+      <h3 class="card-challenger-winner">challenger 1</h3>
+      <h3 class="card-winner">WINNER!</h3>
+      <hr class="card-line">
+      <img src="./assets/cancel.png" id="card-delete" alt="delete winner card">
+        </aside>`;
+  cardContainer.innerHTML = card + cardContainer.innerHTML;
 }
