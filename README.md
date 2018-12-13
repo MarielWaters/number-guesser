@@ -3,9 +3,9 @@
 a two player guessing game and our first paired project of the mod. The learning goals of the project were to:
 
 * Develop your skills in writing:
-..* semantic HTML
-..* clean & organized CSS styles
-..* DRY and organized JavaScript
+* semantic HTML
+* clean & organized CSS styles
+* DRY and organized JavaScript
 * Manipulate the page after it has loaded adding, removing, and updating elements on the DOM
 * Understand event bubbling and use event delegation on dynamic elements
 (Find the project assignment here: http://frontend.turing.io/projects/number-guesser-doubles.html)
