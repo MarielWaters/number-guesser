@@ -123,7 +123,6 @@ function guessEval() {
   var guess2Feedback = document.getElementById('section__guess-feedback-container--accuracy2-js');
   var one = parseInt(guess1.value);
   var two = parseInt(guess2.value);
-
   if (one > numToGuess) {
     guess1Feedback.innerText = "That's too high!";
     console.log("Input number to high")
@@ -151,37 +150,5 @@ function errDisplay(one, two) {
   } else if (two > parseInt(currentRangeMax.innerText) || two < parseInt(currentRangeMin.innerText)) {
     guessErr2.style.visibility = 'visible';
     console.log(two, maxRange, 'two')
-  } 
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
