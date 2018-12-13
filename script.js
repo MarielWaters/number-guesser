@@ -117,7 +117,6 @@ function submitGuess() {
   clearField();
 }
 
-
 function guessEval() {
   var guess1Feedback = document.getElementById('section__guess-feedback-container--accuracy1-js');
   var guess2Feedback = document.getElementById('section__guess-feedback-container--accuracy2-js');
@@ -152,7 +151,7 @@ function errDisplay(one, two) {
   } else if (two > parseInt(currentRangeMax.innerText) || two < parseInt(currentRangeMin.innerText)) {
     guessErr2.style.visibility = 'visible';
     console.log(two, maxRange, 'two')
-  } 
+  }
 }
 
 function cardDisplay() {
@@ -169,3 +168,5 @@ function cardDisplay() {
         </aside>`;
   cardContainer.innerHTML = card + cardContainer.innerHTML;
 }
+
+
