@@ -30,6 +30,7 @@ clearBtn.addEventListener('click', clearField);
 updateBtn.addEventListener('click', newRange);
 resetBtn.addEventListener('click', resetField);
 
+
 function randomNum(min, max) {
   numToGuess = Math.floor(Math.random() * (max - min + 1)) + min;
 }

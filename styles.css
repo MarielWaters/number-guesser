@@ -292,7 +292,6 @@ form {
   margin-right: 2.5rem;
   height: 35px;
   width: 35px;
-}
 
 /* Media Queries */
 
@@ -302,7 +301,6 @@ form {
   }
 }
 
-
 @media (max-width: 805px) {
   .section__form--btn {
     font-size: 1.1rem;
@@ -311,7 +309,7 @@ form {
 
 @media (max-width: 725px) {
   .section__form--btn {
-  font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
