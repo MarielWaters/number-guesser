@@ -168,5 +168,3 @@ function cardDisplay() {
         </aside>`;
   cardContainer.innerHTML = card + cardContainer.innerHTML;
 }
-
-

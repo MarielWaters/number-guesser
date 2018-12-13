@@ -78,7 +78,7 @@ form {
 
 .section__title {
   color: #404041;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 700;
   width: 100%;
 }
@@ -93,7 +93,7 @@ form {
   background-color: #6e6e6e;
   border-radius: 25px;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   height: 3.1rem;
   text-transform: uppercase;
@@ -123,11 +123,12 @@ form {
 
 #main__section--range {
   flex-wrap: wrap;
+  height: 12rem;
 }
 
 #main__section--current-guess {
   flex-wrap: wrap;
-  height: 30rem;
+  height: 35rem;
 }
 
 .section__form--label {
@@ -137,12 +138,13 @@ form {
 
 .section__form--min,
 .section__form--max {
-  height: 2.5rem;
+  height: 3.5rem;
+  font-size: 1.5rem;
   width: 100%;
 }
 
 .section__current-range {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: .5rem 0 1rem 0;
   width: 100%;
 }
@@ -163,12 +165,14 @@ form {
 }
 
 .section__form--challenger-name {
-  height: 2.5rem;
+  height: 3.5rem;
+  font-size: 1.5rem;
   width: 100%;
 }
 
 .section__form--guess {
-  height: 2.5rem;
+  height: 3.5rem;
+  font-size: 1.5rem;
   width: 100%;
 }
 
@@ -205,6 +209,7 @@ form {
 
 #section__latest-score-container-js {
   display: none;
+  height: 20rem;
 }
 
 .section__guess-feedback-container {
@@ -214,12 +219,13 @@ form {
 
 .section__guess-feedback-container--actual-guess {
   color: #dd1972;
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: 700;
 }
 
 .section__guess--challenger-name {
   font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .section__guess-feedback-container--guess-feedback,
@@ -227,8 +233,11 @@ form {
   text-transform: lowercase;
 }
 
+.section__guess-feedback-container--current-guess {
+  font-size: 1.2rem;
+}
+
 .winner-card__container {
-  /*background-color: ;*/
   display: flex;
   justify-content: center;
   width: 50%;
@@ -250,7 +259,7 @@ form {
 }
 
 .card-line {
-  margin: .9rem auto;
+  margin: 2rem auto;
   width: 85%;
 }
 
@@ -259,7 +268,6 @@ form {
   font-size: 2.5rem;
   text-transform: uppercase;
 }
-
 
 .card-winner {
   font-weight: 300;
@@ -282,9 +290,8 @@ form {
 #card-delete {
   float: right;
   margin-right: 2.5rem;
-  height: 16%;
-  width: 7%;
-}
+  height: 35px;
+  width: 35px;
 
 /* Media Queries */
 
