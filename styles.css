@@ -238,3 +238,88 @@ form {
   flex-basis: 90%;
   border: 2px solid pink;
 }
+
+
+
+/* Media Queries */
+
+@media (max-width: 950px) {
+  .section__form--btn {
+    font-size: 1.3rem;
+  }
+}
+
+
+@media (max-width: 805px) {
+  .section__form--btn {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 725px) {
+  .section__form--btn {
+  font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 624px){
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+  }
+
+  .header__title {
+    font-size: 2.25rem;
+    padding-top: 2rem;
+  }
+
+  .header__subtitle {
+    font-size: 1rem;
+  }
+
+  .header__subtitle:before,
+  .header__subtitle:after {
+    width: 2.25rem;
+  }
+
+  .game-container {
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .section__for--btn {
+    font-size: 1.2rem;
+
+  }
+}
+
+@media (max-width: 320px){
+  .header {
+    display: flex;
+  }
+
+  .header__title {
+    font-size: 2rem;
+  }
+
+  .header__subtitle {
+    font-size: 1rem;
+  }
+
+  .game-container {
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .section__form--btn {
+    font-size: 0.6rem;
+  }
+}
