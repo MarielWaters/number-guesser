@@ -25,27 +25,21 @@ var guessErr2 = document.getElementById('challenger2-guess-error-message-js')
 var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2];
 
 //Event Listeners
-submitBtn.addEventListener('click', submitGuess);
-clearBtn.addEventListener('click', clearField);
-updateBtn.addEventListener('click', newRange);
-resetBtn.addEventListener('click', resetField);
-
+$("#section__form--submit-btn-js").click(submitGuess);
+$("#section__form--clear-btn-js").click(clearField);
+$("#section__form--btn-js").click(newRange);
+$("#section__form--reset-btn-js").click(resetField);
+$(window).on("load", randomNum(1,100));
 
 function randomNum(min, max) {
   numToGuess = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log(numToGuess)
 }
 
-randomNum(1, 100);
-console.log(numToGuess + " og number")
-
 function clearField() {
-  minRange.value = "";
-  maxRange.value = "";
-  guess1.value = "";
-  guess2.value = "";
-  challenger1.value = "";
-  challenger2.value = "";
-  clearBtn.disabled = true;
+  $("#section__form--min-js, #section__form--max-js, #section__form--guess1-js, #section__form--guess2-js").val("");
+  $("input:text").val("");
+  $(".section__form--btn").prop("disabled", true);
   clearErr();
 }
 
@@ -55,33 +49,33 @@ function newRange() {
   var currentRangeMin = document.getElementById('section__current-range--min-js');
   var currentRangeMax = document.getElementById('section__current-range--max-js');
   currentRangeMin.innerText = minRange.value;
+  // $("#section__current-range--min-js").val(minRange);
   currentRangeMax.innerText = maxRange.value;
+  // $("section__current-range--max-js").text(#section__form--max-js);
   rangeErrorMsg();
 }
 
 function rangeErrorMsg() {
-  var min = parseInt(minRange.value);
-  var max = parseInt(maxRange.value);
+  let min = parseInt($("#section__form--min-js").val());
+  let max = parseInt($("#section__form--max-js").val())
   if (min >= max) {
-    minRangeErr.style.visibility = 'visible';
-    maxRangeErr.style.visibility = 'visible';
+    $("#min-range-error-message-js").css("visibility", "visible");
+    $("#max-range-error-message-js").css("visibility", "visible");
   }
   if (min < max) {
-    minRangeErr.style.visibility = 'hidden';
-    maxRangeErr.style.visibility = 'hidden';
+    $("#min-range-error-message-js").css("visibility", "hidden");
+    $("#max-range-error-message-js").css("visibility", "hidden");
   }
 }
 
 function clearErr() {
-  minRangeErr.style.visibility = 'hidden';
-  maxRangeErr.style.visibility = 'hidden';
+  $("#min-range-error-message-js").css("visibility", "hidden")
+  $("#max-range-error-message-js").css("visibility", "hidden");
 }
 
 function resetField() {
   randomNum(1, 100);
-  console.log(numToGuess + " new random number");
-  console.log('Boom!2');
-  resetBtn.disabled = true;
+  $("section__form--reset-btn-js").prop("disabled", true)
   clearErr();
 }
 
@@ -91,65 +85,59 @@ inputArray.forEach(function(input) {
 
 function enableBtn() {
   if (guess1.value || guess2.value || challenger1.value || challenger2.value || minRange.value || maxRange.value) {
-    clearBtn.disabled = false;
-    resetBtn.disabled = false;
+    $("#section__form--clear-btn-js").prop("disabled", false)
+    $("#section__form--reset-btn-js").prop("disabled", false)
   } else {
-    clearBtn.disabled = true;
-    resetBtn.disabled = true;
+    $("#section__form--clear-btn-js").prop("disabled", true)
+    $("#section__form--reset-btn-js").prop("disabled", true)
   }
 }
 
 function submitGuess() {
-  var latestScoreContainer = document.getElementById('section__latest-score-container-js');
-  var challenger1Name = document.getElementById('append-challenger1-name-js');
-  var challenger2Name = document.getElementById('append-challenger2-name-js');
-  var challenger1Guess = document.getElementById('section__guess-feedback-container--actual-guess1-js');
-  var challenger2Guess = document.getElementById('section__guess-feedback-container--actual-guess2-js');
-  latestScoreContainer.style.display = 'flex';
-  challenger1Name.innerText = challenger1.value;
-  challenger2Name.innerText = challenger2.value;
-  var currentGuess1 = guess1.value;
-  var currentGuess2 = guess2.value;
-  challenger1Guess.innerText = currentGuess1;
-  challenger2Guess.innerText = currentGuess2;
+  $("#section__latest-score-container-js").css("display", "flex")
+  $("#append-challenger1-name-js").text($("#section__form--challenger1-js").val());
+  $("#append-challenger2-name-js").text($("#section__form--challenger2-js").val());
+  $("#section__guess-feedback-container--actual-guess1-js").text($("#section__form--guess1-js").val())
+  $("#section__guess-feedback-container--actual-guess2-js").text($("#section__form--guess2-js").val());
   guessEval();
-  errDisplay(currentGuess1, currentGuess2);
+  errDisplay($("#section__form--guess1-js").val(), $("#section__form--guess2-js").val());
   clearField();
 }
 
 function guessEval() {
-  var guess1Feedback = document.getElementById('section__guess-feedback-container--accuracy1-js');
-  var guess2Feedback = document.getElementById('section__guess-feedback-container--accuracy2-js');
-  var one = parseInt(guess1.value);
-  var two = parseInt(guess2.value);
-  if (one > numToGuess) {
-    guess1Feedback.innerText = "That's too high!";
-    console.log("Input number too high")
-  } else if (one < numToGuess) {
-    guess1Feedback.innerText = "That's too low!";
-    console.log("Input number too low")
-  } else {
-    guess1Feedback.innerText = "BOOM!";
+  let one = parseInt($("#section__form--guess1-js").val());
+  let two = parseInt($("#section__form--guess2-js").val());
+
+  if (one === numToGuess) {
+    $("#section__guess-feedback-container--accuracy1-js").text("BOOM!");
     cardDisplay();
-  }  if (two > numToGuess) {
-    guess2Feedback.innerText = "That's too high!"
+  } if (one < numToGuess) {
+    $("#section__guess-feedback-container--accuracy1-js").text("That's too low!");
+  } else if (one > numToGuess) {
+    $("#section__guess-feedback-container--accuracy1-js").text("That's too high!");
+  }  if (two === numToGuess) {
+    $("#section__guess-feedback-container--accuracy2-js").text("BOOM!");
+    cardDisplay();
   }  else if (two < numToGuess) {
-    guess2Feedback.innerText = "That's too low!"
-  }  else {
-    guess2Feedback.innerText = "BOOM!"
-    cardDisplay();
+    $("#section__guess-feedback-container--accuracy2-js").text("That's too low!");
+  }  else if (two > numToGuess) {
+    $("#section__guess-feedback-container--accuracy2-js").text("That's too high!");
   }
 }
 
+
 function errDisplay(one, two) {
-  var currentRangeMin = document.getElementById('section__current-range--min-js');
-  var currentRangeMax = document.getElementById('section__current-range--max-js');
-  console.log(currentRangeMax.innerText, currentRangeMin.innerText, one, two)
+  // var currentRangeMin = document.getElementById('section__current-range--min-js');
+  let currentRangeMin = $("#section__current-range--min-js");
+  // var currentRangeMax = document.getElementById('section__current-range--max-js');
+  let currentRangeMax = $("#section__current-range--max-js");
   if (one > parseInt(currentRangeMax.innerText) || one < parseInt(currentRangeMin.innerText)) {
-    guessErr1.style.visibility = 'visible';
+    // guessErr1.style.visibility = 'visible';
+    $("#challenger1-guess-error-message-js").prop("visibility", "visible");
     console.log(one, maxRange, 'one')
   } else if (two > parseInt(currentRangeMax.innerText) || two < parseInt(currentRangeMin.innerText)) {
-    guessErr2.style.visibility = 'visible';
+    // guessErr2.style.visibility = 'visible';
+    $("#challenger2-guess-error-message-js").prop("visibility", "visible");
     console.log(two, maxRange, 'two')
   }
 }
