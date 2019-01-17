@@ -2,8 +2,7 @@
 var numToGuess = 0;
 
 //Array Query
-// var inputArray = [minRange, maxRange, challenger1, guess1, challenger2, guess2];
-let inputArray = [$("#section__form--min-js"), $("#section__form--max-js"), $("#section__form--challenger1-js"), $("#section__form--guess1-js"), $("#section__form--challenger2-js"), $("#section__form--guess2-js")]
+// let inputArray = [$("#section__form--min-js"), $("#section__form--max-js"), $("#section__form--challenger1-js"), $("#section__form--guess1-js"), $("#section__form--challenger2-js"), $("#section__form--guess2-js")]
 
 //Event Listeners
 $("#section__form--submit-btn-js").click(submitGuess);
@@ -11,11 +10,10 @@ $("#section__form--clear-btn-js").click(clearField);
 $("#section__form--btn-js").click(newRange);
 $("#section__form--reset-btn-js").click(resetField);
 $("input").keyup(enableBtn);
-$(window).on("load", randomNum(1,100));
+$(window).on("load", randomNum(1, 100));
 
 function randomNum(min, max) {
   numToGuess = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(numToGuess)
 }
 
 function clearField() {
@@ -26,16 +24,13 @@ function clearField() {
 }
 
 function newRange() {
-  // randomNum(parseInt($("#section__form--min-js")), parseInt($("#section__form--max-js")));
   const minRange = $("#section__form--min-js").val();
   const maxRange = $("#section__form--max-js").val();
   randomNum(parseInt(minRange), parseInt(maxRange));
   const currentRangeMin = $('#section__current-range--min-js');
   const currentRangeMax = $('#section__current-range--max-js');
   currentRangeMin.innerText = minRange.value;
-  // $("#section__current-range--min-js").val(minRange);
   currentRangeMax.innerText = maxRange.value;
-  // $("section__current-range--max-js").text("#section__form--max-js");
   rangeErrorMsg();
 }
 
@@ -64,11 +59,10 @@ function resetField() {
   clearErr();
 }
 
-$("#section__form--guess1-js").val() || $("section__form--guess2-js").val() || $("#section__form--challenger1-js").val() || $("#section__form--challenger2-js").val()
+$("#section__form--guess1-js").val() || $("section__form--guess2-js").val() || $("#section__form-- challenger1-js").val() || $("#section__form--challenger2-js").val()
 
 function enableBtn() {
-  if ($("#section__form--guess1-js").val() || $("section__form--guess2-js").val() || $("#section__form--challenger1-js").val() || $("#section__form--challenger2-js").val()) {
-  // if (guess1.value || guess2.value || challenger1.value || challenger2.value || minRange.value || maxRange.value) {
+  if ($("#section__form--guess1-js").val() || $("#section__form--guess2-js").val() || $("#section__form--challenger1-js").val() || $("#section__form--challenger2-js").val()) {
     $("#section__form--clear-btn-js").prop("disabled", false)
     $("#section__form--reset-btn-js").prop("disabled", false)
   } else {
@@ -109,16 +103,13 @@ function guessEval() {
   }
 }
 
-
 function errDisplay(one, two) {
   const currentRangeMin = $("#section__current-range--min-js");
   const currentRangeMax = $("#section__current-range--max-js");
   if (one > parseInt(currentRangeMax.innerText) || one < parseInt(currentRangeMin.innerText)) {
     $("#challenger1-guess-error-message-js").prop("visibility", "visible");
-    console.log(one, maxRange, 'one')
   } else if (two > parseInt(currentRangeMax.innerText) || two < parseInt(currentRangeMin.innerText)) {
     $("#challenger2-guess-error-message-js").prop("visibility", "visible");
-    console.log(two, maxRange, 'two')
   }
 }
 
